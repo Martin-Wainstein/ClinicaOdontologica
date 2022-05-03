@@ -28,11 +28,11 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String passwordUser = passwordEncoder.encode("digital");
-        repository.save(new AppUser("Martin", "Martin", "mwainstein2003@gmail.com", passwordUser, AppUsuarioRoles.ROLE_USER));
+        String passwordUser = passwordEncoder.encode("passwordUser");
+        repository.save(new AppUser("Martin", "Martin", "user@gmail.com", passwordUser, AppUsuarioRoles.ROLE_USER));
 
-        String passwordAdmin = passwordEncoder.encode("digitalAdmin");
-        repository.save(new AppUser("Martin", "Martin", "mwain2003@gmail.com", passwordAdmin, AppUsuarioRoles.ROLE_ADMIN));
+        String passwordAdmin = passwordEncoder.encode("passwordAdmin");
+        repository.save(new AppUser("Martin", "Martin", "admin@gmail.com", passwordAdmin, AppUsuarioRoles.ROLE_ADMIN));
 
 
         Odontologo odontologo1 = odontologoRepository.save(new Odontologo(1111, "Martin", "Wainstein"));
